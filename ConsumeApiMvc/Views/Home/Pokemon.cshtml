@@ -1,0 +1,221 @@
+﻿@model ConsumeApiMvc.ViewModels.PokemonViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pokemon</title>
+</head>
+<body>
+    <div>
+        <h4>Pokemon</h4>
+        <hr />
+        <div>
+            @Html.DropDownListFor(model => model.PokemonIds, new SelectList(Model.PokemonIds, "value", "key"), new { id= "pokemonIds" })
+            <form id="form" method="post">
+                <input type="hidden" id="pokemonId" name="id"/>
+            </form>
+        </div>
+        @if (Model.Pokemon != null)
+        {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.attack)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.attack)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.catch_rate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.catch_rate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.created)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.created)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.defense)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.defense)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.egg_cycles)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.egg_cycles)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.ev_yield)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.ev_yield)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.exp)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.exp)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.growth_rate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.growth_rate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.happiness)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.happiness)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.height)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.height)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.hp)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.hp)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.male_female_ratio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.male_female_ratio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.modified)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.modified)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.national_id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.national_id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.pkdx_id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.pkdx_id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.resource_uri)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.resource_uri)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.sp_atk)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.sp_atk)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.sp_def)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.sp_def)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.species)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.species)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.speed)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.speed)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.total)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.total)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pokemon.weight)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pokemon.weight)
+            </dd>
+    
+        </dl>
+        }
+    </div>
+    <script type="text/javascript">
+        var dropDown = document.getElementById("pokemonIds");
+        dropDown.onchange = function (evt) {
+            document.getElementById("pokemonId").value = dropDown.options[dropDown.selectedIndex].value;
+            document.getElementById("form").submit();
+        };
+    </script>
+</body>
+</html>
